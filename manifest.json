@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "Markdown to HTML",
+    "version": "0.1",
+    "description": "View local Markdown files as HTML",
+    "icons": {
+        "512": "images/icon-512.png",
+        "256": "images/icon-256.png",
+        "128": "images/icon-128.png",
+        "64": "images/icon-64.png",
+        "32": "images/icon-32.png"
+    },
+    "author": "Christer Edvartsen",
+    "homepage_url": "https://github.com/christeredvartsen/markdown-to-html-chrome-extension",
+    "content_scripts": [
+        {
+            "matches": [
+                "file://*.md",
+                "file://*.markdown"
+            ],
+            "js": [
+                "showdown-1.4.1.min.js",
+                "markdown-to-html.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "<all_urls>",
+        "storage"
+    ],
+    "web_accessible_resources": [
+        "themes/bootstrap-3.3.6.min.css"
+    ]
+}
