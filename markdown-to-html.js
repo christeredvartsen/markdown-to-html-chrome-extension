@@ -3,7 +3,7 @@
         text      = document.body.innerText,
         html      = '<div class="container">' + converter.makeHtml(text) + '</div>';
 
-	document.body.innerHTML = html.replace('<table>', '<table class="table table-striped">');
+	document.body.innerHTML = html.replace(/<table>/g, '<table class="table table-striped">');
 
     chrome.storage.sync.get({
         markdownViewerTheme: 'bootstrap-3.3.6.min.css',
